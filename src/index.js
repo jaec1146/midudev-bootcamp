@@ -7,12 +7,13 @@ const Title = ({course}) => <h1>{course}</h1>
 
 */
 
-const Title = (props) => {
-   return <h1>{props.course}</h1>
+const Header = (props) => {
+  return <h1>{props.course}</h1>
 }
 
-const Parrafo = ({parts,exercises }) => <p>{parts} {exercises}</p>
+const Content = ({part,exercises }) => <p>{part} {exercises}</p>
 
+const Total = ({parts}) => <p>Number of exercises {parts}</p>
 
 const App = () => {
   const course = 'Half Stack application development'
@@ -25,11 +26,11 @@ const App = () => {
 
   return (
     <div>
-      <Title course = {course} />
-      <Parrafo parts = {part1} exercises = {exercises1} />
-      <Parrafo parts={part2} exercises={exercises2} />
-      <Parrafo parts = {part3} exercises = {exercises3} />
-      <Parrafo parts= {'Number of exercises'} exercises = {exercises1+exercises2+exercises3} />
+      <Header course = {course} />
+      <Content part = {part1} exercises = {exercises1} />
+      <Content part={part2} exercises={exercises2} />
+      <Content part = {part3} exercises = {exercises3} />
+      <Total parts= {exercises1+exercises2+exercises3} />
     </div>
   )
 }
